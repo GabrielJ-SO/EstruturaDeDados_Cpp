@@ -9,6 +9,8 @@ typedef struct lista_estatica {
 
 ListaEstatica* criar(int tamanho);
 
+void excluir(ListaEstatica* lista);
+
 int buscar(ListaEstatica *lista, int valor);
 int obterElemento(ListaEstatica *lista, int i);
 

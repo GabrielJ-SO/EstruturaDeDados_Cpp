@@ -9,6 +9,13 @@
 
         return lista;
     }
+
+
+    void excluir(ListaEstatica* lista) {
+        free (lista->vetor);
+        lista->vetor = NULL;
+    }
+
         
     int buscar(ListaEstatica *lista, int valor) {
         for (int i = 0; i < lista->quantidade; i++) {
@@ -19,7 +26,12 @@
         return -1;
     }
 
-    int obterElemento(ListaEstatica *lista, int i);
+    int obterElemento(ListaEstatica *lista, int i) {
+        if (i >= lista->tamanho) 
+            return -1;
+        else
+            return lista->vetor[i];
+    }
 
 
     bool inserir(ListaEstatica *lista, int valor) {
@@ -39,11 +51,9 @@
         if (i == -1) { return false; } 
             
         lista->quantidade--;
-        for (i; i < lista->quantidade; i ++) {
+        for (i; i < lista->quantidade; i++) {
             lista->vetor[i] = lista->vetor[i + 1];
         }
 
         return true;
     }
-
-    
